@@ -1,0 +1,23 @@
+{
+  "name": "launch-countdown-timer-main",
+  "version": "1.0.0",
+  "description": "![Design preview for the Launch countdown timer coding challenge](./design/desktop-preview.jpg)",
+  "main": "index.js",
+  "scripts": {
+    "watch:sass": "sass --watch style.scss:style.css --no-source-map"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ericsen-tsai/launch-countdown-timer-main.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ericsen-tsai/launch-countdown-timer-main/issues"
+  },
+  "homepage": "https://github.com/ericsen-tsai/launch-countdown-timer-main#readme",
+  "dependencies": {
+    "sass": "^1.52.3"
+  }
+}

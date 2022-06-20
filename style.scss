@@ -1,0 +1,199 @@
+$clr-primary-1: hsl(237, 18%, 59%);
+$clr-primary-2: hsl(345, 95%, 68%);
+$clr-neutral-1: hsl(0, 0%, 100%);
+$clr-neutral-2: hsl(236, 21%, 26%);
+$clr-neutral-3: hsl(235, 16%, 14%);
+$clr-neutral-4: hsl(234, 17%, 12%);
+
+$default-font-size: 1.4rem;
+$counter-font-size: 8rem;
+$default-font-weight: 700;
+
+*,
+**,
+**::after,
+**::before {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  font-size: 62.5%;
+  font-family: "Red Hat Text", sans-serif;
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  margin: 0;
+  position: relative;
+  background-image: url(./images/pattern-hills.svg),
+    linear-gradient($clr-neutral-3, $clr-neutral-3);
+  width: 100%;
+  height: 100%;
+  background-position: bottom;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  &__header {
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1rem;
+    color: $clr-neutral-1;
+  }
+
+  &__counter {
+    perspective: 600px;
+    display: inline-block;
+    position: relative;
+    width: 5rem;
+    height: 5rem;
+  }
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  height: 10rem;
+  width: 15rem;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.icon {
+  display: inline-block;
+  width: 2.5rem;
+  height: 2.5rem;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  &:hover {
+    cursor: pointer;
+    filter: invert(56%) sepia(91%) saturate(2358%) hue-rotate(310deg)
+      brightness(100%) contrast(98%);
+  }
+}
+
+.foreground {
+  position: absolute;
+  font-size: $counter-font-size;
+
+  height: calc($counter-font-size/2);
+  width: calc($counter-font-size * 1.2);
+  padding: 0 2rem;
+  backface-visibility: hidden;
+  overflow: hidden;
+  display: none;
+
+  &--front {
+    top: 0rem;
+    background-color: orangered;
+    transform-origin: bottom;
+    animation: flip-middle-to-down 0.5s forwards linear;
+    padding-top: 2rem;
+  }
+
+  &--back {
+    top: calc($counter-font-size/2 + 2rem);
+    background-color: yellowgreen;
+    transform-origin: top;
+    transform: rotateX(180deg);
+    animation: flip-top-to-middle 0.5s forwards linear;
+    backface-visibility: hidden;
+    padding-bottom: 2rem;
+  }
+
+  &__text {
+    height: 10rem;
+    width: 10rem;
+    position: absolute;
+  }
+
+  &--front &__text {
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &--back &__text {
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.background {
+  position: relative;
+  font-size: $counter-font-size;
+  height: calc($counter-font-size/2);
+  width: calc($counter-font-size * 1.2);
+  z-index: -1;
+  padding: 0 2rem;
+  overflow: hidden;
+
+  &--top {
+    background-color: yellow;
+    padding-top: 2rem;
+  }
+
+  &--bottom {
+    background-color: whitesmoke;
+    padding-bottom: 2rem;
+  }
+
+  &__text {
+    height: 10rem;
+    width: 10rem;
+    position: absolute;
+  }
+
+  &--top &__text {
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &--bottom &__text {
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes flip-top-to-middle {
+  0% {
+    box-shadow: 0 0.2rem 0.2rem #000;
+    border-bottom: 0.1rem solid rgba(240, 46, 170, 0.4);
+  }
+
+  100% {
+    transform: rotateX(0deg);
+    // box-shadow: rgba(240, 46, 170, 0.4) 5px 5px,
+    //   rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px,
+    //   rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
+  }
+}
+
+@keyframes flip-middle-to-down {
+  0% {
+    box-shadow: rgba(240, 46, 170, 0.4) 5px 5px,
+      rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px,
+      rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
+  }
+
+  100% {
+    transform: rotateX(-180deg);
+    box-shadow: 0 0.2rem 0.2rem #000;
+    border-top: 0.1rem solid rgba(240, 46, 170, 0.4);
+  }
+}

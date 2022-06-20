@@ -14,24 +14,107 @@
 
     <link rel="stylesheet" href="style.css" />
     <title>Frontend Mentor | Launch countdown timer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <div class="counter">
-      <span class="front">
-        1
-      </span>
-      <span class="front">
-        1
-      </span>
-      <span class="back">
-        2
-      </span>
-      <span class="back">
-        2
-      </span>
-      <span class="background">
-        1
-      </span>
+    <!-- <div class="counter">
+      <div class="foreground foreground--front">
+        <span class="foreground__text">1</span>
+      </div>
+      <div class="foreground foreground--back">
+        <span class="foreground__text">1</span>
+      </div>
+
+      <div class="background background--top">
+        <span class="background__text">1</span>
+      </div>
+      <div class="background background--bottom">
+        <span class="background__text">1</span>
+      </div>
+    </div>-->
+    <button onclick="handleOnClick()">Toggle</button>
+
+    <div class="container">
+      <div class="content">
+        <h3 class="content__header">We're launching soon</h3>
+        <div class="content__counter-box">
+          <div class="content__counter content__counter--days">
+            <div class="foreground foreground--front">
+              <span class="foreground__text">1</span>
+            </div>
+            <div class="foreground foreground--back">
+              <span class="foreground__text">1</span>
+            </div>
+
+            <div class="background background--top">
+              <span class="background__text">1</span>
+            </div>
+            <div class="background background--bottom">
+              <span class="background__text">1</span>
+            </div>
+          </div>
+          <!-- <div class="content__counter content__counter--hours">
+            <div class="foreground foreground--front">
+              <span class="foreground__text">1</span>
+            </div>
+            <div class="foreground foreground--back">
+              <span class="foreground__text">1</span>
+            </div>
+
+            <div class="background background--top">
+              <span class="background__text">1</span>
+            </div>
+            <div class="background background--bottom">
+              <span class="background__text">1</span>
+            </div>
+          </div>
+          <div class="content__counter content__counter--minutes">
+            <div class="foreground foreground--front">
+              <span class="foreground__text">1</span>
+            </div>
+            <div class="foreground foreground--back">
+              <span class="foreground__text">1</span>
+            </div>
+
+            <div class="background background--top">
+              <span class="background__text">1</span>
+            </div>
+            <div class="background background--bottom">
+              <span class="background__text">1</span>
+            </div>
+          </div>
+          <div class="content__counter content__counter--seconds">
+            <div class="foreground foreground--front">
+              <span class="foreground__text">1</span>
+            </div>
+            <div class="foreground foreground--back">
+              <span class="foreground__text">1</span>
+            </div>
+
+            <div class="background background--top">
+              <span class="background__text">1</span>
+            </div>
+            <div class="background background--bottom">
+              <span class="background__text">1</span>
+            </div>
+          </div> -->
+        </div>
+      </div>
+      <footer class="footer">
+        <img class="icon" src="./images/icon-facebook.svg" alt="facebook" />
+        <img class="icon" src="./images/icon-pinterest.svg" alt="pinterest" />
+        <img
+          class="icon"
+          src="./images/icon-instagram.svg"
+          alt="insticon-instagram.svg"
+        />
+      </footer>
     </div>
+    <script src="index.js" type="text/javascript"></script>
   </body>
 </html>
