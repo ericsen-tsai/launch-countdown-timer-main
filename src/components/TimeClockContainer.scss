@@ -1,0 +1,53 @@
+@import "../sass/variables";
+
+@function multiply-rem($value1, $value2) {
+  @return calc($value1 * $value2 / 1rem);
+}
+
+.timeclock {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100rem;
+
+  &__header {
+    text-align: center;
+    font-size: 3.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1rem;
+    color: $clr-neutral-1;
+    padding: 6%;
+  }
+
+  &__counter-box {
+    display: flex;
+    justify-content: center;
+    gap: $counter-gap;
+  }
+
+  &__counter {
+    perspective: 60rem;
+    display: inline-block;
+    position: relative;
+
+    width: multiply-rem($counter-padding, $counter-padding);
+    height: multiply-rem($counter-padding, $counter-padding);
+  }
+
+  &__unit-box {
+    display: flex;
+    justify-content: center;
+    gap: $counter-gap;
+    color: white;
+  }
+
+  &__unit {
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+    color: $clr-primary-1;
+    font-size: $default-font-size;
+    width: multiply-rem($counter-padding, $counter-padding);
+  }
+}

@@ -1,0 +1,13 @@
+.icon {
+  display: inline-block;
+  width: 2.5rem;
+  height: 2.5rem;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  &:hover {
+    cursor: pointer;
+    filter: invert(56%) sepia(91%) saturate(2358%) hue-rotate(310deg)
+      brightness(100%) contrast(98%);
+  }
+}
