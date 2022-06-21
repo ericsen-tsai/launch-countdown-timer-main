@@ -12,12 +12,23 @@
   width: 100rem;
 
   &__header {
+    box-sizing: content-box;
     text-align: center;
     font-size: 3.2rem;
     text-transform: uppercase;
     letter-spacing: 1rem;
     color: $clr-neutral-1;
+    border-radius: 0.5rem;
     padding: 6%;
+    border: 0.1rem solid transparent;
+    cursor: pointer;
+
+    &:hover {
+      background: radial-gradient($clr-primary-1, $clr-primary-2);
+      border: 0.1rem solid $clr-primary-2;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
   }
 
   &__counter-box {

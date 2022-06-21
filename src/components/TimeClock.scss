@@ -12,6 +12,8 @@
   backface-visibility: hidden;
   overflow: hidden;
   display: none;
+  border-radius: 1rem;
+  border-top: 0.2rem $clr-neutral-3 solid;
 
   &--front {
     top: 0rem;
@@ -63,6 +65,9 @@
   padding: 0 $counter-padding;
   overflow: hidden;
 
+  border-radius: 1rem;
+  border-top: 0.2rem $clr-neutral-3 solid;
+
   &--top {
     background-color: $clr-neutral-3;
     padding-top: $counter-padding;
@@ -100,9 +105,6 @@
 
   100% {
     transform: rotateX(0deg);
-    // box-shadow: rgba(240, 46, 170, 0.4) 5px 5px,
-    //   rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px,
-    //   rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
   }
 }
 
