@@ -1,6 +1,6 @@
-import { useState, useEffect, useCallback } from "react"
+import { useState, useEffect } from "react"
 
-import { endDate } from "../constants"
+import { END_DATE } from "../constants"
 
 export const useTimer = () => {
   const [seconds, setSeconds] = useState(0)
@@ -10,7 +10,7 @@ export const useTimer = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      let diff = endDate - new Date()
+      let diff = END_DATE - new Date()
 
       const allSecs = Math.floor(diff / 1000)
       setSeconds(allSecs % 60)

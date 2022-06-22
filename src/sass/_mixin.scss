@@ -1,0 +1,43 @@
+@import "../sass/variables";
+
+@mixin ground($first-card, $second-card) {
+  text-align: center;
+  font-size: $counter-font-size;
+
+  height: calc($counter-font-size/2);
+  width: $counter-font-size;
+  padding: 0 $counter-padding;
+  overflow: hidden;
+
+  border-radius: 1rem;
+  border-top: 0.2rem $clr-neutral-3 solid;
+
+  &__text {
+    height: 10rem;
+    width: 10rem;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &--#{$first-card} {
+    background-color: $clr-neutral-3;
+    padding-top: $counter-padding;
+  }
+
+  &--#{$second-card} {
+    background-color: $clr-neutral-2;
+
+    padding-bottom: $counter-padding;
+  }
+
+  &--#{$first-card} &__text {
+    top: 100%;
+    color: rgba($clr-primary-2, 0.8);
+  }
+
+  &--#{$second-card} &__text {
+    top: 0;
+    color: $clr-primary-2;
+  }
+}
