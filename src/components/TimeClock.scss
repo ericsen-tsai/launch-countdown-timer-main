@@ -12,14 +12,15 @@
   &--front {
     top: 0rem;
     transform-origin: bottom;
-    animation: flip-middle-to-back 0.2s forwards linear;
+    animation: flip-to-back 0.3s forwards linear;
   }
 
   &--back {
     top: calc($counter-font-size/2 + $counter-padding);
+    border-top: 0.3rem $clr-neutral-3 solid;
     transform-origin: top;
     transform: rotateX(180deg);
-    animation: flip-front-to-middle 0.2s forwards linear;
+    animation: flip-to-front 0.3s forwards linear;
   }
 }
 
@@ -30,7 +31,12 @@
   z-index: -1;
 
   &--bottom {
+    border-top: 0.35rem $clr-neutral-3 solid;
     box-shadow: rgba(245, 60, 67, 0.25) 0px 50px 100px -20px,
       rgba(255, 187, 225, 0.3) 0px 30px 60px -30px;
+  }
+
+  &__text {
+    transform: translate(-49.5%, -50%);
   }
 }

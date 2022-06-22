@@ -1,24 +1,26 @@
-@keyframes flip-front-to-middle {
+@keyframes flip-to-front {
   0% {
     box-shadow: 0 0.2rem 0.2rem #000;
-    border-bottom: 0.1rem solid rgba(240, 46, 170, 0.4);
+    border-bottom: 0.3rem solid rgba(240, 46, 170, 0.4);
   }
 
   100% {
     transform: rotateX(0deg);
+    border-bottom: 0.3rem solid transparent;
   }
 }
 
-@keyframes flip-middle-to-back {
+@keyframes flip-to-back {
   0% {
     box-shadow: rgba(240, 46, 170, 0.4) 5px 5px,
       rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px,
       rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
+    border-top: 0.3rem solid transparent;
   }
 
   100% {
     transform: rotateX(-180deg);
     box-shadow: 0 0.2rem 0.2rem #000;
-    border-top: 0.1rem solid rgba(240, 46, 170, 0.4);
+    border-top: 0.3rem solid rgba(240, 46, 170, 0.4);
   }
 }

@@ -10,11 +10,22 @@
   overflow: hidden;
 
   border-radius: 1rem;
-  border-top: 0.2rem $clr-neutral-3 solid;
+
+  @include respond(tab-land) {
+    width: 8rem;
+    font-size: 6rem;
+    padding: 0 2rem;
+  }
 
   &__text {
     height: 10rem;
     width: 10rem;
+
+    @include respond(tab-land) {
+      height: 8rem;
+      width: 8rem;
+    }
+
     position: absolute;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -23,12 +34,19 @@
   &--#{$first-card} {
     background-color: $clr-neutral-3;
     padding-top: $counter-padding;
+
+    @include respond(tab-land) {
+      padding-top: 2rem;
+    }
   }
 
   &--#{$second-card} {
     background-color: $clr-neutral-2;
-
     padding-bottom: $counter-padding;
+
+    @include respond(tab-land) {
+      padding-bottom: 2rem;
+    }
   }
 
   &--#{$first-card} &__text {
@@ -39,5 +57,31 @@
   &--#{$second-card} &__text {
     top: 0;
     color: $clr-primary-2;
+  }
+}
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media (max-width: 37.5em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == tab-port {
+    @media (max-width: 56.25em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == tab-land {
+    @media (max-width: 75em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == big-desktop {
+    @media (min-width: 112.5em) {
+      @content;
+    }
   }
 }

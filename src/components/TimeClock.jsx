@@ -14,11 +14,13 @@ const TimeClock = ({ unit, val }) => {
     foregroundBackRef.current.style.display = "inline-block"
   }, [val])
 
-  const handleAnimationEnd = () => {
+  const handleAnimationEnd = async () => {
     setOriginalBackgroundVal(val)
-    foregroundFrontRef.current.style.display = "none"
-    foregroundBackRef.current.style.display = "none"
-    setOriginalForegroundVal(val)
+    setTimeout(() => {
+      foregroundFrontRef.current.style.display = "none"
+      foregroundBackRef.current.style.display = "none"
+      setOriginalForegroundVal(val)
+    }, 5)
   }
 
   return (

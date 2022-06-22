@@ -1,4 +1,5 @@
 @import "../sass/variables";
+@import "../sass/mixin";
 
 @function multiply-rem($value1, $value2) {
   @return calc($value1 * $value2 / 1rem);
@@ -10,6 +11,10 @@
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100rem;
+
+  @include respond(tab-land) {
+    width: 100%;
+  }
 
   &__header {
     box-sizing: content-box;
@@ -26,7 +31,10 @@
     &:hover {
       background: radial-gradient($clr-primary-1, $clr-primary-2);
       border: 0.1rem solid $clr-primary-2;
+
       -webkit-background-clip: text;
+      background-clip: text;
+
       -webkit-text-fill-color: transparent;
     }
   }
@@ -35,6 +43,11 @@
     display: flex;
     justify-content: center;
     gap: $counter-gap;
+
+    @include respond(tab-land) {
+      gap: 1.5rem;
+      height: 14rem;
+    }
   }
 
   &__counter {
@@ -44,6 +57,11 @@
 
     width: multiply-rem($counter-padding, $counter-padding);
     height: multiply-rem($counter-padding, $counter-padding);
+
+    @include respond(tab-land) {
+      width: 12rem;
+      height: 12rem;
+    }
   }
 
   &__unit-box {
@@ -51,6 +69,10 @@
     justify-content: center;
     gap: $counter-gap;
     color: white;
+
+    @include respond(tab-land) {
+      gap: 1.5rem;
+    }
   }
 
   &__unit {
@@ -60,5 +82,10 @@
     color: $clr-primary-1;
     font-size: $default-font-size;
     width: multiply-rem($counter-padding, $counter-padding);
+
+    @include respond(tab-land) {
+      margin: 0;
+      width: 12rem;
+    }
   }
 }
