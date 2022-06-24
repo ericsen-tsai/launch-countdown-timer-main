@@ -20,7 +20,7 @@ export const useTimer = () => {
     setMinutes(totalDiffMins % 60)
     setHours(totalDiffHours % 24)
     setDays(totalDiffDays)
-  }, [seconds, minutes, hours, days])
+  }, [])
 
   useEffect(() => {
     const interval = setInterval(() => setCurrentTime(), 1000)
