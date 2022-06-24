@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, useCallback } from "react"
 
 import { END_DATE } from "../constants"
 
@@ -8,26 +8,25 @@ export const useTimer = () => {
   const [hours, setHours] = useState(0)
   const [days, setDays] = useState(0)
 
+  const setCurrentTime = useCallback(() => {
+    let totalDiffMillisecs = END_DATE - new Date()
+
+    const totalDiffSecs = Math.floor(totalDiffMillisecs / 1000)
+    const totalDiffMins = Math.floor(totalDiffSecs / 60)
+    const totalDiffHours = Math.floor(totalDiffMins / 60)
+    const totalDiffDays = Math.floor(totalDiffHours / 24)
+
+    setSeconds(totalDiffSecs % 60)
+    setMinutes(totalDiffMins % 60)
+    setHours(totalDiffHours % 24)
+    setDays(totalDiffDays)
+  }, [seconds, minutes, hours, days])
+
   useEffect(() => {
-    const interval = setInterval(() => {
-      let diff = END_DATE - new Date()
+    const interval = setInterval(() => setCurrentTime(), 1000)
 
-      const allSecs = Math.floor(diff / 1000)
-      setSeconds(allSecs % 60)
-
-      const allMins = Math.floor(allSecs / 60)
-      setMinutes(allMins % 60)
-
-      const allHours = Math.floor(allMins / 60)
-      setHours(allHours % 24)
-
-      const allDays = Math.floor(allHours / 24)
-      setDays(allDays)
-    }, 1000)
-    return () => {
-      clearInterval(interval)
-    }
-  }, [])
+    return () => clearInterval(interval)
+  }, [setCurrentTime])
 
   return { seconds, minutes, hours, days }
 }
